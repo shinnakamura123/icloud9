@@ -1,0 +1,14 @@
+<% book.comments.each do |comment| %>
+  <table class = "table">
+    <tr>
+      <td>
+        <%= link_to user_path(comment.user) do %>
+          <%= image_tag comment.user.get_profile_image, size:"100x100" %></br>
+          <%= comment.user.name %>
+        <% end %>
+      </td>
+      <td><%= comment.content %></td>
+      <td><%= link_to '削除', book_comment_path(book.id, comment.id), method: :delete, local: true, class: "btn btn-danger" %></td>
+    </tr>
+  </table>
+<% end %>

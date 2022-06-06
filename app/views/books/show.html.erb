@@ -23,6 +23,13 @@
           <% end %>
         </tr>
       </table>
+      <h2>Comments</h2>
+  		<div id = "comments">
+  		  <%= render 'comments/comments', book: @book %>
+  		</div>
+  		<div id = "comment_form">
+  		  <%= render 'comments/comment_form', book: @book, comment: @comment %>
+  		</div>
     </div>
   </div>
 </div>
